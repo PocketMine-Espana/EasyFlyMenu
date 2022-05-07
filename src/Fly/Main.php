@@ -53,7 +53,10 @@ class Main extends P implements L {
           $pl->setFlying(false);
           $pl->sendMessage($this->prefix."Fly Desactivado");
         break;
-      }
+        case 2:
+          
+        break;
+        }
     });
     $form->setTitle("§l§5Fly Menu");
     $form->addButton("§l§5FLY ON");
