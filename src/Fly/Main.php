@@ -38,6 +38,28 @@ class Main extends P implements L {
   }
   
   public function getFly(Player $pl){
-    
+    $form = new SimpleForm(function (Player $pl, int $data = null){
+      if($data === null){
+        return true;
+      }
+      switch($data){
+        case 0:
+          $pl->setAllowFlight(true);
+          $pl->setFlying(true);
+          $pl->sendMessage($this->prefix."Fly Activado");
+        break;
+        case 1:
+          $pl->setAllowFlight(false);
+          $pl->setFlying(false);
+          $pl->sendMessage($this->prefix."Fly Desactivado");
+        break;
+      }
+    });
+    $form->setTitle("§l§5Fly Menu");
+    $form->addButton("§l§5FLY ON");
+    $form->addButton("§l§5FLY OFF");
+    $form->addButton("§l§4SALIR",0,"textures/ui/redX1");
+    $form->sendToPlayer($pl);
+    return $form;
   }
 }
