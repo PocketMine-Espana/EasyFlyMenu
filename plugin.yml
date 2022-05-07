@@ -1,0 +1,19 @@
+name: EasyFly
+
+main: Fly\Main
+
+api: 4.0.0
+
+version: 1.0.0
+
+author: SexxRetacted
+
+commands:
+  fly:
+    description: "Open Fly Menu"
+    permission: fly.cmd 
+    
+permissions:
+  fly.cmd:
+    description: "fly permission"
+    default: op
